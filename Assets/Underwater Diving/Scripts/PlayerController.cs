@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour{
 
 	public float moveSpeed;
 	public bool rushing = false;
+	public Joystick joystick;
+
 	private float speedMod = 0;
 
 	float timeLeft = 2f;
@@ -20,6 +22,8 @@ public class PlayerController : MonoBehaviour{
 	void Start (){
 		myRigidBody = GetComponent<Rigidbody2D> ();	
 		myAnim = GetComponent<Animator> ();
+
+		
 	}
 	
 	// Update is called once per frame

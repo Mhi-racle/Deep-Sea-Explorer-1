@@ -23,6 +23,13 @@ public class MineController : MonoBehaviour {
 			
 			Destroy (gameObject);
 			Instantiate (explosion, gameObject.transform.position, gameObject.transform.rotation);
-		}	
+            {
+				return;
+            }
+			//AudioManager.instance.Play("explosion");
+		}
+
 	}
+
+
 }

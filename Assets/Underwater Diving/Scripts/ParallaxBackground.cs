@@ -14,11 +14,15 @@ public class ParallaxBackground : MonoBehaviour {
 	private int rightIndex;
 	private float lastCameraX;
 	private float lastCameraY;
+	//private float textureUnitSizeX;
 
 	// Use this for initialization
 	void Start () {
 		cameraTransform = Camera.main.transform;
 		lastCameraX = cameraTransform.position.x;
+		//Sprite sprite = GetComponent<SpriteRenderer>().sprite;
+		//Texture2D texture sprite.texture;
+		//textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
 		layers = new Transform[transform.childCount];
 
 		for(int i = 0; i < transform.childCount; i++){

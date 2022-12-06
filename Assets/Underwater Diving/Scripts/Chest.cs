@@ -4,31 +4,22 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    public enum Effects
-    {
-        Invisible,
-        Scores,
-        AccelerationBoost,
-        HungerFill,
-        Killer
-    }
-
     private Animator _animator;
 
     private Camera _camera;
-    public Vector2 effectTimeBounds;
+    //public Vector2 effectTimeBounds;
     public bool isOpen;
     public float openTime = 1.5f;
 
-    public Effects ownEffect;
-    public int scoreCount = 100;
+    //public Effects ownEffect;
+    //public int scoreCount = 100;
 
     public GameObject chest;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        ownEffect = (Effects)Random.Range(0, 5);
+        //ownEffect = (Effects)Random.Range(0, 5);
         _camera = Camera.main;
     }
 
