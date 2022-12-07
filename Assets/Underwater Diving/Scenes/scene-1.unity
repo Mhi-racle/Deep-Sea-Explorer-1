@@ -552,17 +552,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191201761}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ac9b12df16eb6428d9948cd1cfa498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1788738035192327}
+  prefab: {fileID: 2511690416792769316, guid: 59639a14ea997d34187a6f865935c02a, type: 3}
   player: {fileID: 7338691617571335299}
   spawnRange: 2
   spawnIntervalSeconds: 5
   fadeInSeconds: 1
-  maxInstances: 2
+  maxInstances: 10
 --- !u!1 &197502300
 GameObject:
   m_ObjectHideFlags: 0
@@ -8504,11 +8504,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1788738035192327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2511690416792769316, guid: 59639a14ea997d34187a6f865935c02a, type: 3}
-  m_PrefabInstance: {fileID: 2512177332853178659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4068025948376860 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2215783924977150779, guid: 2538234d2bf050245901ad2dc823a032, type: 3}
