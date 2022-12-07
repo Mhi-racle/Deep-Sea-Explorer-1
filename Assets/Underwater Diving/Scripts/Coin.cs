@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        //CoinPanel.coinAmount += 1;
+        CoinPanel.coinAmount += 1;
         Destroy(gameObject);
 
     }

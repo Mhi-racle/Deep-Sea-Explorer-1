@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour{
 
 	public float moveSpeed;
 	public bool rushing = false;
-	public Joystick joystick;
+
+	
 
 	private float speedMod = 0;
 
@@ -32,22 +34,20 @@ public class PlayerController : MonoBehaviour{
 		resetBoostTime ();
 		controllerManager ();
 
-
-
 		myAnim.SetFloat ("Speed", Mathf.Abs(myRigidBody.velocity.x));
 
-	 
+		
 		
 	}
 
 	void controllerManager (){
-		if (Input.GetAxisRaw ("Horizontal") > 0f) {
+		if (Input.GetAxis ("Horizontal") > 0f) {
 			transform.localScale = new Vector3(1f,1f,1f);
 			movePlayer ();
-		} else if (Input.GetAxisRaw ("Horizontal") < 0f) {			
+		} else if (Input.GetAxis ("Horizontal") < 0f) {			
 			transform.localScale = new Vector3(-1f,1f,1f);
 			movePlayer ();
-		} else if (Input.GetAxisRaw ("Vertical") > 0f) {
+		} else if (Input.GetAxis ("Vertical") > 0f) {
 			myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, moveSpeed, 0f);
 		} else if (Input.GetAxis ("Vertical") < 0f) {
 			myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, -moveSpeed, 0f);
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour{
 			myRigidBody.velocity = new Vector3 (moveSpeed + speedMod, myRigidBody.velocity.y, 0f);	
 		} else {
 			myRigidBody.velocity = new Vector3 (- (moveSpeed + speedMod), myRigidBody.velocity.y, 0f);
-		}	
+		}
 	}
 
 	void resetBoostTime(){
