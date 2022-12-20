@@ -1311,6 +1311,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
   m_PrefabInstance: {fileID: 1023065304}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &302090348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+  m_PrefabInstance: {fileID: 1023065304}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a47f546fc70ec8428172694e78e4288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &315532834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4241,6 +4252,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1317381642}
     m_Modifications:
+    - target: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: axisOptions
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9208,6 +9227,7 @@ MonoBehaviour:
   moveSpeed: 1
   rushing: 0
   bubbles: {fileID: 1801604868145782, guid: e969aaa734be044efad60bd50e7fb070, type: 3}
+  floatingJoystick: {fileID: 302090348}
 --- !u!50 &7338691617571335303
 Rigidbody2D:
   serializedVersion: 4

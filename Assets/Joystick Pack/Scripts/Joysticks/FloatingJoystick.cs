@@ -15,6 +15,7 @@ public class FloatingJoystick : Joystick
     {
         background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
         background.gameObject.SetActive(true);
+        
         base.OnPointerDown(eventData);
     }
 
@@ -22,5 +23,22 @@ public class FloatingJoystick : Joystick
     {
         background.gameObject.SetActive(false);
         base.OnPointerUp(eventData);
+    }
+
+     //this would move the character
+    public float inputHorizontal(){
+        if(input.x !=0){
+            return input.x;
+        }
+       
+         return input.x;
+    }
+
+    public float inputVertical(){
+          if(input.y !=0){
+            return input.y;
+        }
+
+           return input.y;
     }
 }

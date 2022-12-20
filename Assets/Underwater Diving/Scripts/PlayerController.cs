@@ -20,12 +20,17 @@ public class PlayerController : MonoBehaviour{
 
 	public GameObject bubbles;
 
+	//move character with joystick
+
+	public FloatingJoystick floatingJoystick;
+	private float inputX;
+	private float inputY;
+
 	// Use this for initialization
 	void Start (){
 		myRigidBody = GetComponent<Rigidbody2D> ();	
 		myAnim = GetComponent<Animator> ();
 
-		
 	}
 	
 	// Update is called once per frame
@@ -41,6 +46,10 @@ public class PlayerController : MonoBehaviour{
 	}
 
 	void controllerManager (){
+		inputX = floatingJoystick.inputHorizontal();
+		inputY = floatingJoystick.inputVertical();
+
+  #region Standalone Inputs
 		if (Input.GetAxis ("Horizontal") > 0f) {
 			transform.localScale = new Vector3(1f,1f,1f);
 			movePlayer ();
@@ -58,7 +67,24 @@ public class PlayerController : MonoBehaviour{
 			speedMod = 2;
 			Instantiate (bubbles, gameObject.transform.position, gameObject.transform.rotation);
 			movePlayer ();
-		}	
+		}
+#endregion
+
+//would work for mobile inputs
+      #region Mobile Inputs
+			if (inputX > 0f) {
+			transform.localScale = new Vector3(1f,1f,1f);
+			movePlayer ();
+		} else if (inputX < 0f) {			
+			transform.localScale = new Vector3(-1f,1f,1f);
+			movePlayer ();
+		} else if (inputY > 0f) {
+			myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, moveSpeed, 0f);
+		} else if (inputY < 0f) {
+			myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, -moveSpeed, 0f);
+		}
+	#endregion
+
 	}
 
 	void movePlayer(){
